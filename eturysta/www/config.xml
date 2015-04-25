@@ -8,9 +8,7 @@
 		event.
 	</description>
 
-	<author href="http://www.eclipse.org/thym" email="thym-dev@eclipse.org">
-		Eclipse.org - Thym
-	</author>
+	<author href="" email="olechnowicztomasz@gmail.com">Tomasz Olechnowicz</author>
 
 	<content src="index.html" />
 
