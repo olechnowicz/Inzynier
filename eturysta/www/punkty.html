@@ -72,7 +72,18 @@
 			var marker2 = dodajMarker(53.777748, 20.477651,'<a class="navigate-right"><img class="media-object pull-left" src="http://s.zwinka.pl/var/img/kat/2877a-d.jpg"><div class="media-body"><h3>Wysoka brama</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p></div></a>');
 			var marker3 = dodajMarker(53.776537, 20.475795,'<a class="navigate-right"><img class="media-object pull-left" src="http://www.olsztyn.eu/uploads/RTEmagicC_stary_ratusz2.jpg.jpg"><div class="media-body"><h3>Stary ratusz</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p></div></a>');
 			var marker4 = dodajMarker(53.776176, 20.477651,'<a class="navigate-right"><img class="media-object pull-left" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Olsztyn-katedra.jpg/240px-Olsztyn-katedra.jpg"><div class="media-body"><h3>Bazylika</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p></div></a>');
-		}   
+		} 
+		function getLocation() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(showPosition);
+		    } 
+		}
+
+		function showPosition(position) {
+			var marker5 = dodajMarker(position.coords.latitude, position.coords.longitude,'Jestem tutaj');
+			google.maps.event.trigger(marker5,'click');
+		
+		}  
 		</script>   
 		
 		<div id="mapka">   
@@ -84,7 +95,7 @@
 <!-- <div class="bar bar-standard bar-footer">
  
 </div> -->
-
+<button onclick="getLocation()">Znajdź mnie</button>
  
   </body>
 </html>
