@@ -30,6 +30,7 @@
 		
 		var mapa;
 		var dymek = new google.maps.InfoWindow(); // zmienna globalna
+		<!--var ikona = new google.maps.MarkerImage('img/icon38.png',new google.maps.Size(65, 124),new google.maps.Point(0,0),new google.maps.Point(56, 122));-->
 		function dodajMarker(lat,lng,txt)
 		{
 			
@@ -38,6 +39,7 @@
 			{  
 				position: new google.maps.LatLng(lat,lng),  
 				map: mapa
+				<!--icon : ikona -->
 			
 			}  
 			var marker = new google.maps.Marker(opcjeMarkera);
@@ -49,6 +51,8 @@
 				dymek.open(mapa,marker);
 			});
 			return marker;
+
+			
 		}
 		
 		function mapaStart()   
@@ -80,22 +84,21 @@
 		}
 
 		function showPosition(position) {
-			var marker5 = dodajMarker(position.coords.latitude, position.coords.longitude,'Jestem tutaj');
+			var marker5 = dodajMarker(position.coords.latitude, position.coords.longitude,'Jesteś tutaj');
+			
 			google.maps.event.trigger(marker5,'click');
 		
 		}  
+		
 		</script>   
 		
 		<div id="mapka">   
 		<!-- tu będzie mapa -->   
 		</div>   
-		
-
-
 <!-- <div class="bar bar-standard bar-footer">
- 
 </div> -->
-<button onclick="getLocation()">Znajdź mnie</button>
- 
+
+<div class ="buton">
+<button class="btn btn-negative" onclick="getLocation()">Znajdź mnie</button></div>
   </body>
 </html>
